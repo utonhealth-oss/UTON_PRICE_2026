@@ -25,7 +25,6 @@
             --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
             --radius: 16px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --img-aspect-ratio: 4/3;
         }
 
         body {
@@ -126,17 +125,19 @@
         .product-image-wrapper {
             position: relative;
             width: 100%;
-            aspect-ratio: var(--img-aspect-ratio);
+            padding-bottom: 75%; /* 4:3 aspect ratio (3/4 = 0.75) */
             background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
             overflow: hidden;
         }
 
         .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
-            padding: 0;
             background: #fafafa;
         }
 
@@ -335,13 +336,7 @@
                 font-size: 22px;
             }
 
-            .product-image {
-                padding: 16px;
-            }
-
-            :root {
-                --img-aspect-ratio: 1/1;
-            }
+            /* Убраны стили для aspect-ratio - теперь 4:3 везде */
         }
 
         @media (max-width: 480px) {
@@ -697,260 +692,4 @@
                             <circle cx="8.5" cy="8.5" r="1.5"/>
                             <path d="M21 15l-5-5L5 21"/>
                         </svg>
-                        <span class="image-placeholder-text">Добавьте изображение<br>soft-mini-box-express-care.jpg</span>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <div class="product-header">
-                        <div class="product-name">Soft Mini Box Express Care</div>
-                        <div class="product-name-ru">Бьютибокс Экспресс Уход для чувствительной кожи</div>
-                    </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">Soft Mini Box</div>
-                            <div class="special-volume">3 Процедуры</div>
-                        </div>
-                        <div class="special-prices">
-                            <div class="special-price-block">
-                                <div class="price-label">Специалист</div>
-                                <div class="price price-pro">1 700 ₽</div>
-                            </div>
-                            <div class="special-price-block">
-                                <div class="price-label">Розница</div>
-                                <div class="price price-retail">3 400 ₽</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soft Cleanser -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="images/soft-cleanser.jpg" alt="Soft Cleanser" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span class="image-placeholder-text">Добавьте изображение<br>soft-cleanser.jpg</span>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <div class="product-header">
-                        <div class="product-name">Soft Cleanser</div>
-                        <div class="product-name-ru">Гель очищающий для чувствительной кожи</div>
-                    </div>
-                    <div class="price-table-header">
-                        <span>Объем</span>
-                        <span>Специалист</span>
-                        <span>Розница</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">5 мл</span>
-                        <span class="price price-pro">190 ₽</span>
-                        <span class="price price-retail">400 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">30 мл</span>
-                        <span class="price price-pro">500 ₽</span>
-                        <span class="price price-retail">1 080 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">100 мл</span>
-                        <span class="price price-pro">1 160 ₽</span>
-                        <span class="price price-retail">2 900 ₽</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soft Toner -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="images/soft-toner.jpg" alt="Soft Toner" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span class="image-placeholder-text">Добавьте изображение<br>soft-toner.jpg</span>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <div class="product-header">
-                        <div class="product-name">Soft Toner</div>
-                        <div class="product-name-ru">Тоник для чувствительной кожи</div>
-                    </div>
-                    <div class="price-table-header">
-                        <span>Объем</span>
-                        <span>Специалист</span>
-                        <span>Розница</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">5 мл</span>
-                        <span class="price price-pro">190 ₽</span>
-                        <span class="price price-retail">400 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">30 мл</span>
-                        <span class="price price-pro">600 ₽</span>
-                        <span class="price price-retail">1 340 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">100 мл</span>
-                        <span class="price price-pro">1 350 ₽</span>
-                        <span class="price price-retail">2 760 ₽</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soft Peel -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="images/soft-peel.jpg" alt="Soft Peel" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span class="image-placeholder-text">Добавьте изображение<br>soft-peel.jpg</span>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <div class="product-header">
-                        <div class="product-name">Soft Peel</div>
-                        <div class="product-name-ru">Пилинг для чувствительной кожи</div>
-                    </div>
-                    <div class="price-table-header">
-                        <span>Объем</span>
-                        <span>Специалист</span>
-                        <span>Розница</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">5 мл</span>
-                        <span class="price price-pro">270 ₽</span>
-                        <span class="price price-retail">550 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">30 мл</span>
-                        <span class="price price-pro">1 250 ₽</span>
-                        <span class="price price-retail">2 650 ₽</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bioactive Black Mask -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="images/bioactive-black-mask.jpg" alt="Bioactive Black Mask" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span class="image-placeholder-text">Добавьте изображение<br>bioactive-black-mask.jpg</span>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <div class="product-header">
-                        <div class="product-name">Bioactive Black Mask</div>
-                        <div class="product-name-ru">Сапропелевая биоактивная маска с вулканическим пеплом</div>
-                    </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">1 Саше</div>
-                            <div class="special-volume">25 мл</div>
-                        </div>
-                        <div class="special-prices">
-                            <div class="special-price-block">
-                                <div class="price-label">Специалист</div>
-                                <div class="price price-pro">230 ₽</div>
-                            </div>
-                            <div class="special-price-block">
-                                <div class="price-label">Розница</div>
-                                <div class="price price-retail">600 ₽</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="special-row">
-                        <div class="special-info">
-                            <div class="special-name">7 Саше</div>
-                            <div class="special-volume">175 мл</div>
-                        </div>
-                        <div class="special-prices">
-                            <div class="special-price-block">
-                                <div class="price-label">Специалист</div>
-                                <div class="price price-pro">1 220 ₽</div>
-                            </div>
-                            <div class="special-price-block">
-                                <div class="price-label">Розница</div>
-                                <div class="price price-retail">3 550 ₽</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Soft Cream SPF-30 -->
-            <div class="product-card">
-                <div class="product-image-wrapper">
-                    <img src="images/soft-cream-spf30.jpg" alt="Soft Cream SPF-30" class="product-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                        <span class="image-placeholder-text">Добавьте изображение<br>soft-cream-spf30.jpg</span>
-                    </div>
-                </div>
-                <div class="product-content">
-                    <div class="product-header">
-                        <div class="product-name">Soft Cream SPF-30</div>
-                        <div class="product-name-ru">Крем постпроцедурный для чувствительной кожи</div>
-                    </div>
-                    <div class="price-table-header">
-                        <span>Объем</span>
-                        <span>Специалист</span>
-                        <span>Розница</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">5 мл</span>
-                        <span class="price price-pro">275 ₽</span>
-                        <span class="price price-retail">550 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">30 мл</span>
-                        <span class="price price-pro">1 200 ₽</span>
-                        <span class="price price-retail">2 390 ₽</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="volume">100 мл</span>
-                        <span class="price price-pro">2 880 ₽</span>
-                        <span class="price price-retail">5 790 ₽</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p class="footer-note">
-            Цены указаны в рублях и действительны на 2026 год.<br>
-            Для получения актуальной информации о наличии и оптовых скидках<br>
-            обращайтесь к вашему персональному менеджеру.
-        </p>
-        <a href="https://t.me/utoncosmetics" class="contact" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-16.5 6.6a2.25 2.25 0 0 0-.106 4.07l3.6 1.5 2.1 6.3a1.125 1.125 0 0 0 2.04.255l2.7-4.2 4.2 2.7a2.25 2.25 0 0 0 3.3-1.8V4.5a2.25 2.25 0 0 0-2.312-2.067z"/>
-            </svg>
-            @utoncosmetics
-        </a>
-    </footer>
-
-</body>
-</html>
+                        <span class="image-placeholder
